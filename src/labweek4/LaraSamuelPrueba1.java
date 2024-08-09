@@ -44,10 +44,9 @@ public class LaraSamuelPrueba1 {
                 String palabra=lea.next();
                 
                 int reversa=palabra.length()-1;
-                
+                System.out.print("La palabra alreves seria: ");
                 while(reversa>=0){
-                    
-                    System.out.print("La palabra alreves seria: "+palabra.charAt(reversa));
+                    System.out.print(palabra.charAt(reversa));
                     reversa--;
                 }
                 pa++;
