@@ -79,13 +79,73 @@ public class LaraSamuelPrueba1 {
                     cont++;
                 }
                 if(primo==maquina+1){
-                    System.out.println("Es primo");
+                    System.out.println(" es primo");
+                    System.out.println(" ");
+                    System.out.println("Divisores de "+maquina+": 1 y "+maquina);
                     
                 }else{
-                    System.out.println("No es primo");  
+                    System.out.println(" no es primo");  
                 }
             }else if(menu==4){
+                //llamar objeto Scanner
+                String voto=" ";
+                //votos para los partidos
+                int votoBlue=0;
+                int votoRed=0;
+                int votoBlack=0;
+                int votoYellow=0;
+                //votos nulos
+                int nulo=0;
+                //total de votos
+                int total=0;
+                System.out.print("Cuantos votantes hay en el pais?: ");
+                int votantes=lea.nextInt();
                 
+                for(int contador=0;votantes>contador;contador++){
+//                    do{
+                        System.out.println("");
+                        System.out.println("**PLANILLA DE VOTOS**");
+                        System.out.println("\nAZUL\nROJO\nNEGRO\nAMARILLO");
+                        System.out.print("Ingresar por quien va a votar: ");
+                        voto=lea.next().toUpperCase();
+//                    }while(!voto.equals("AZUL")&&!voto.equals("ROJO")&&!voto.equals("NEGRO")&&!voto.equals("AMARILLO"));
+                    
+                    if(voto.equals("AZUL")){
+                        votoBlue++;
+                        total++;
+                    }else if(voto.equals("ROJO")){
+                        votoRed++;
+                        total++;
+                    }else if(voto.equals("NEGRO")){
+                        votoBlack++;
+                        total++;
+                    }else if(voto.equals("AMARILLO")){
+                        votoYellow++;
+                        total++;
+                    }else{
+                        nulo++;
+                        total-=nulo;
+                    }
+                }
+                
+                double valido=(total*100)/votantes;
+                
+                if(valido>60){
+                if(votoBlue>votoRed&&votoBlue>votoBlack&&votoBlue>votoYellow){
+                    System.out.println("Ganador partido AZUL con: "+votoBlue+" voto(s)");
+                }else if(votoRed>votoBlue&&votoRed>votoBlack&&votoRed>votoYellow){
+                    System.out.println("Ganador partido ROJO con: "+votoRed+" voto(s)");
+                }else if(votoBlack>votoRed&&votoBlack>votoBlue&&votoBlack>votoYellow){
+                    System.out.println("Ganador partido NEGRO con: "+votoBlack+" voto(s)");
+                }else if(votoYellow>votoBlue&&votoYellow>votoRed&&votoYellow>votoBlack){
+                    System.out.println("Ganador partido AMARILLO con: "+votoYellow+" voto(s)");
+                }else{
+                    System.out.println("Gano nulos");
+                }
+                }else{
+                    System.out.println("No se realizo porque la cantidad de votos validos es el 60% de los votos totales");
+                    System.out.println("No gano nadie");
+                }
             }else{
                 System.out.println("Termino.");
             }
