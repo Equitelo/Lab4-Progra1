@@ -38,11 +38,29 @@ public class LaraSamuelPrueba1 {
                 
                 while(reversa>=0){
                     
-                    System.out.print(palabra.charAt(reversa));
+                    System.out.print("La palabra alreves seria: "+palabra.charAt(reversa));
                     reversa--;
                 }
             }else if(menu==2){
-                
+                int suma=0;
+                System.out.print("Favor ingrese el numero al que desea evaluar: ");
+                int numero = lea.nextInt();
+                //contador para while
+                int cont=1;
+                //ciclo while
+                while(cont<numero){
+                    //evalua si hay residuo
+                    if(numero%cont==0) {
+                        suma += cont;
+                    }
+                    cont++;
+                }
+                if(suma==numero){
+                    System.out.println("Numero perfecto.");
+                    
+                }else{
+                    System.out.println("Numero no perfecto.");  
+                }            
             }else if(menu==3){
                 
             }else if(menu==4){
