@@ -13,6 +13,15 @@ public class LaraSamuelPrueba1 {
         Random aleatorio=new Random();
         
         int menu=0;
+        //veces ingresadas a cada programa
+        //ejercicio 1
+        int pa=0;
+        //ejercicio 2
+        int np=0;
+        //ejercicio 3
+        int p=0;
+        //ejercicio 4
+        int v=0;
         while(menu!=5){
             do{
                 System.out.println("");
@@ -41,6 +50,7 @@ public class LaraSamuelPrueba1 {
                     System.out.print("La palabra alreves seria: "+palabra.charAt(reversa));
                     reversa--;
                 }
+                pa++;
             }else if(menu==2){
                 int suma=0;
                 System.out.print("Favor ingrese el numero al que desea evaluar: ");
@@ -60,7 +70,8 @@ public class LaraSamuelPrueba1 {
                     
                 }else{
                     System.out.println("Numero no perfecto.");  
-                }            
+                }         
+                np++;
             }else if(menu==3){
                 //Random
                 int maquina=aleatorio.nextInt(100);
@@ -86,6 +97,7 @@ public class LaraSamuelPrueba1 {
                 }else{
                     System.out.println(" no es primo");  
                 }
+                p++;
             }else if(menu==4){
                 //llamar objeto Scanner
                 String voto=" ";
@@ -129,16 +141,20 @@ public class LaraSamuelPrueba1 {
                 }
                 
                 double valido=(total*100)/votantes;
+                double azul=(votoBlue*100)/votantes;
+                double rojo=(votoRed*100)/votantes;
+                double amarillo=(votoYellow*100)/votantes;
+                double negro=(votoBlack*100)/votantes;
                 
                 if(valido>60){
                 if(votoBlue>votoRed&&votoBlue>votoBlack&&votoBlue>votoYellow){
-                    System.out.println("Ganador partido AZUL con: "+votoBlue+" voto(s)");
+                    System.out.println("Ganador partido AZUL con: "+votoBlue+" voto(s)"+" voto(s) y con el porcentaje: "+azul+"% ");
                 }else if(votoRed>votoBlue&&votoRed>votoBlack&&votoRed>votoYellow){
-                    System.out.println("Ganador partido ROJO con: "+votoRed+" voto(s)");
+                    System.out.println("Ganador partido ROJO con: "+votoRed+" voto(s)"+" voto(s) y con el porcentaje: "+rojo+"% ");
                 }else if(votoBlack>votoRed&&votoBlack>votoBlue&&votoBlack>votoYellow){
-                    System.out.println("Ganador partido NEGRO con: "+votoBlack+" voto(s)");
+                    System.out.println("Ganador partido NEGRO con: "+votoBlack+" voto(s)"+" voto(s) y con el porcentaje: "+negro+"% ");
                 }else if(votoYellow>votoBlue&&votoYellow>votoRed&&votoYellow>votoBlack){
-                    System.out.println("Ganador partido AMARILLO con: "+votoYellow+" voto(s)");
+                    System.out.println("Ganador partido AMARILLO con: "+votoYellow+" voto(s) y con el porcentaje: "+amarillo+"% ");
                 }else{
                     System.out.println("Gano nulos");
                 }
@@ -146,8 +162,13 @@ public class LaraSamuelPrueba1 {
                     System.out.println("No se realizo porque la cantidad de votos validos es el 60% de los votos totales");
                     System.out.println("No gano nadie");
                 }
+                v++;
             }else{
                 System.out.println("Termino.");
+                System.out.println("\nPalabra Alreves veces ingresadas: "+pa);
+                System.out.println("Numero Perfecto veces ingresadas: "+np);
+                System.out.println("Primos veces ingresadas: "+p);
+                System.out.println("Votaciones veces ingresadas: "+v);
             }
         
         }
