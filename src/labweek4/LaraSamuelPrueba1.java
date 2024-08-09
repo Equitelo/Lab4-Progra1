@@ -139,8 +139,9 @@ public class LaraSamuelPrueba1 {
                         total-=nulo;
                     }
                 }
-                
+                //calculo validez
                 double valido=(total*100)/votantes;
+                //porcentaje de por cuanto ganan
                 double azul=(votoBlue*100)/votantes;
                 double rojo=(votoRed*100)/votantes;
                 double amarillo=(votoYellow*100)/votantes;
