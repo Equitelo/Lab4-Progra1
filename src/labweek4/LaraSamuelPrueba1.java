@@ -62,7 +62,28 @@ public class LaraSamuelPrueba1 {
                     System.out.println("Numero no perfecto.");  
                 }            
             }else if(menu==3){
+                //Random
+                int maquina=aleatorio.nextInt(100);
+                System.out.print("Numero aleatorio "+maquina);
                 
+                //contador
+                int cont=1;
+                //variable verificacion primo
+                int primo=0;
+                //ciclo while
+                while(cont<=maquina){
+                    //evalua si hay residuo
+                    if(maquina%cont==0) {
+                        primo += cont;
+                    }
+                    cont++;
+                }
+                if(primo==maquina+1){
+                    System.out.println("Es primo");
+                    
+                }else{
+                    System.out.println("No es primo");  
+                }
             }else if(menu==4){
                 
             }else{
